@@ -19,5 +19,6 @@ public class Topic {
     @GeneratedValue
     private int id;
     private String name;
+    private String description;
 
 }

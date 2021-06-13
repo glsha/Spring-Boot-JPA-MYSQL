@@ -31,7 +31,7 @@ public class TopicService {
             return topicRepository.findById(id).orElse(null);
         }
         else {
-            return new Topic(id,"This id does not exist!!!!");
+            return new Topic(id,"This id does not exist!!!!", "N/A");
         }
     }
 
@@ -47,6 +47,7 @@ public class TopicService {
     public Topic updateTopic(Topic topic) {
         Topic existingTopic = topicRepository.findById(topic.getId()).orElse(null);
         existingTopic.setName(topic.getName());
+        existingTopic.setDescription(topic.getDescription());
         return  topicRepository.save(existingTopic);
     }
 
